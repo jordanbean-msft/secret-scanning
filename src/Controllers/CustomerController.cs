@@ -26,7 +26,7 @@ namespace WebApplication1.Controllers
                 connection.Open();
                 
                 //update the Customer table in the database
-                string query = "UPDATE Customer SET Name = @Name, Address = @Address, Email = @Email, Phone = @Phone WHERE Id = " + customer.Id;//@Id";
+                string query = "UPDATE Customer SET Name = @Name, Address = @Address, Email = @Email, Phone = @Phone WHERE Id = '" + customer.Id + "'";
                 SqlCommand command = new SqlCommand(query, connection);
                 //command.Parameters.AddWithValue("@Id", customer.Id);
                 command.Parameters.AddWithValue("@Name", customer.Name);
